@@ -7,7 +7,7 @@ import jira from "../../images/logo_jira_w.svg"
 
 const PoStep3 = () =>{
   return (
-    <div className={`relative m-0auto desktop:max-w-screen-desktop`}>
+    <div className={`relative m-0auto h-full desktop:max-w-screen-desktop`}>
       <div className="list-bg absolute top-0 left-0 w-full h-screen overflow-hidden">
         <img src={bg} alt="list-bg" />
       </div>
@@ -34,7 +34,7 @@ const PoStep3 = () =>{
         </div>
       </div>
 
-      <div className="list-box w-500 h-596 bg-green/30 absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-1/2 rounded-3xl backdrop-blur-xl z-10 flex flex-col justify-start items-stretch text-center">
+      <div className="list-box w-500 h-596 bg-green/30 absolute left-1/2 top-[calc(50%+100px)] -translate-x-1/2 -translate-y-1/2 rounded-3xl backdrop-blur-xl z-10 flex flex-col justify-start items-stretch text-center">
         <div className="title flex justify-center items-center flex-col bg-green p-3.5 rounded-t-3xl">
           <p className="text-3xl text-bg-dark">產品待辦清單</p>
           <p className="text-dark-green text-base">Product Backlog</p>
@@ -53,8 +53,10 @@ const PoStep3 = () =>{
           </ul>
         </div>
       </div>
-      <div className="list-box w-500 h-596 bg-green/20 absolute left-[calc(50%+12px)] top-[calc(50%+12px)] -translate-x-1/2 translate-y-1/2 rounded-3xl"></div>
-      <div className="list-box w-500 h-596 bg-green/10 absolute left-[calc(50%+22px)] top-[calc(50%+22px)] -translate-x-1/2 translate-y-1/2 rounded-3xl"></div>
+      <div className="list-box w-500 h-596 bg-green/20 absolute left-[calc(50%+12px)] top-[calc(50%+112px)] -translate-x-1/2 -translate-y-1/2 rounded-3xl"></div>
+      <div className="list-box w-500 h-596 bg-green/10 absolute left-[calc(50%+22px)] top-[calc(50%+124px)] -translate-x-1/2 -translate-y-1/2 rounded-3xl"></div>
+      {/* tag  */}
+      <div className="tag-btn absolute top-1/2 left-1/2 z-20">應徵者的線上履歷編輯器</div>
     </div>
   )
 }

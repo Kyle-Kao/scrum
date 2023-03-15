@@ -30,6 +30,7 @@ module.exports = {
         '20percent': '20%',
         '22percent': '22%',
         'btn-p': '12px 50px',
+        'tag-p': '12px 25px',
         'p145': '145px 100px 0',
         'p100': '40px 100px',
         '36px': '36px'

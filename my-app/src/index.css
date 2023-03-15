@@ -21,6 +21,9 @@
   .passLeafT {
     @apply -translate-y-full transition-all duration-1000 delay-1000
   }
+  .tag-btn {
+    @apply text-xl text-white rounded-3xl border-4 p-tag-p border-green bg-bg-dark/60
+  }
 }
 
 /* 覆蓋 */
@@ -39,6 +42,7 @@
 .beforeLine {
   @apply before:block before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:bg-white before:w-1 before:h-4/5
 }
+
 
 .test{
   animation: forwards;
