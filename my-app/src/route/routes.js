@@ -11,9 +11,6 @@ const router = createBrowserRouter([
   {
     path: "/list/:step",
     element: <List />,
-  },
-  {
-    basename: '/scrum'
   }
 ])
 
