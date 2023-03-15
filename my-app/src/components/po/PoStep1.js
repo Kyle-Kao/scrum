@@ -26,7 +26,6 @@ const PoStep1 = () => {
   },[times])
 
   const handleClick = () => {
-    console.log('23')
     if(canClick) {
       navigate("/list/2")
     }
