@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/scrum/static/css/main.e40ad1f2.css",
+    "main.js": "/scrum/static/js/main.5a0829b1.js",
+    "static/media/logo_hole.png": "/scrum/static/media/logo_hole.d3ff59fc3b5413f82b4e.png",
+    "static/media/bg_village.png": "/scrum/static/media/bg_village.680f13032bd0e90cac09.png",
+    "static/media/bg_leafDark_3.png": "/scrum/static/media/bg_leafDark_3.5b68d750b3ebb253e06e.png",
+    "static/media/bg_leafDark_1.png": "/scrum/static/media/bg_leafDark_1.0ca7f257d20b41b09275.png",
+    "static/media/bg_leafDark_4.png": "/scrum/static/media/bg_leafDark_4.f8e00328677587fbfe67.png",
+    "static/media/role_po_light.png": "/scrum/static/media/role_po_light.9d6082a85e497c40421f.png",
+    "static/media/bg_leafDark_2.png": "/scrum/static/media/bg_leafDark_2.f0bd84461e2cd414738e.png",
+    "static/media/bg_leafTint_4.png": "/scrum/static/media/bg_leafTint_4.c2b7ae8b237a1ebdfa48.png",
+    "static/media/bg_leafTint_2.png": "/scrum/static/media/bg_leafTint_2.4c878e919b06a74d535f.png",
+    "static/media/loading.gif": "/scrum/static/media/loading.1971fc68f9b5c2b64961.gif",
+    "static/media/bg_leafTint_1.png": "/scrum/static/media/bg_leafTint_1.26461a94ffe84716ced5.png",
+    "static/media/role_po.png": "/scrum/static/media/role_po.5acc3b93dea8b03f0add.png",
+    "static/media/bg_leafTint_3.png": "/scrum/static/media/bg_leafTint_3.118168328f8ccd33e0a5.png",
+    "static/media/logo_jira_w.svg": "/scrum/static/media/logo_jira_w.698d1ff910ada8351e67289b310de962.svg",
+    "index.html": "/scrum/index.html",
+    "static/media/hole.svg": "/scrum/static/media/hole.d213cb622608de788995c48ee9c083ad.svg",
+    "main.e40ad1f2.css.map": "/scrum/static/css/main.e40ad1f2.css.map",
+    "main.5a0829b1.js.map": "/scrum/static/js/main.5a0829b1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e40ad1f2.css",
+    "static/js/main.5a0829b1.js"
+  ]
+}
