@@ -33,7 +33,7 @@ const PoStep2 = () =>{
             <img src={continuePo} alt="continuePo" />
           </div>
         </div>
-        <Link to="/list/3" className='btnBlue absolute right-36px bottom-36px'>準備好了</Link> 
+        <Link to="/list/3" className='btnBlue absolute right-36px bottom-36px opacity-0 animate-fadeOpacity delay-2500'>準備好了</Link> 
       </div>
     </div>
   )

@@ -31,6 +31,7 @@ module.exports = {
         '22percent': '22%',
         'btn-p': '12px 50px',
         'tag-p': '12px 25px',
+        'list-p': '30px 25px',
         'p145': '145px 100px 0',
         'p100': '40px 100px',
         '36px': '36px'
@@ -39,18 +40,23 @@ module.exports = {
         '1500': '1500ms',
         '2000': '2000ms',
         '2500': '2500ms',
-        '3000': '3000ms'
+        '3000': '3000ms',
+        '3500': '3500ms',
+        '5500': '5500ms',
+        '6500': '6500ms'
       },
       width: {
         '997': '997px',
         '908': '908px',
         '320': '320px',
         '324': '324px',
+        '412': '412px',
         '467': '467px',
         '500': '500px'
       },
       height: {
         '83': '83px',
+        '100': '100px',
         '152': '152px',
         '224': '224px',
         '430': '430px',
@@ -78,6 +84,10 @@ module.exports = {
         fadeOpacity: {
           '0%': {  opacity: '0' },
           '100%': { opacity: '1' }
+        },
+        listOpacity :{
+          '0%': {  opacity: '0.3' },
+          '100%': { opacity: '1' }
         }
       },
       animation: {
@@ -85,7 +95,9 @@ module.exports = {
         showHole: 'showHole 1s linear',
         showPo: 'showPo 1s 1.2s ease-in-out forwards',
         contentPo: 'contentPo 1.5s 2s ease-in-out forwards',
-        fadeOpacity: 'fadeOpacity 1.5s 3.5s ease-in-out forwards'
+        fadeOpacity: 'fadeOpacity 1.5s 3.5s ease-in-out forwards',
+        listOpacity: 'listOpacity 0.5s 5.5s ease-in-out forwards',
+        listOpacity2: 'listOpacity 0.5s 6.5s ease-in-out forwards'
       },
     },
   },

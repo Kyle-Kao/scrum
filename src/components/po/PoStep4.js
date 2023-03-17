@@ -4,39 +4,17 @@ import hole from '../../images/hole.svg'
 import poLight from '../../images/role_po_light.png'
 import continuePo from '../../images/ic_continue_po.gif'
 import jira from "../../images/logo_jira_w.svg"
-import point from "../../images/hand-finger.png"
-import arrow from "../../images/Vector 1.png"
+import { ListContent } from '../../documents/Content'
+import { ListItem } from "../dnd/Drag"
+import { ListBox } from "../dnd/Drop"  
 
-import { useEffect, useState } from "react"
-import { useNavigate } from 'react-router-dom'
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
 
-// 耗時七秒完成動畫
 const PoStep3 = () =>{
-  const [ times, setTimes ] = useState(0)
-  const [ canClick, setCanClick ] = useState(false)
-  const navigate  = useNavigate()
-
-  useEffect(()=>{
-    const count = setInterval(()=>{
-      setTimes(per=>per+1)
-    },1000)
-    if(times === 7){
-      clearInterval(count)
-      setCanClick(true)
-    }
-    return () =>{
-      clearInterval(count)
-    }
-  },[times])
-
-  const handleClick = () =>{
-    if(canClick){
-      navigate("/list/4")
-    }
-  }
-
+  
   return (
-    <div className={`relative m-0auto h-full desktop:max-w-screen-desktop`} onClick={handleClick}>
+    <div className={`relative m-0auto h-full desktop:max-w-screen-desktop`}>
       <div className="list-bg absolute top-0 left-0 w-full h-screen overflow-hidden">
         <img src={bg} alt="list-bg" />
       </div>
@@ -63,7 +41,7 @@ const PoStep3 = () =>{
         </div>
       </div>
       {/* 最外層list盒子 */}
-      <div className="outside-box opacity-0 animate-fadeOpacity">
+      <DndProvider backend={HTML5Backend} className="outside-box opacity-0 animate-fadeOpacity">
         <div className="list-box w-500 h-596 bg-green/30 absolute left-1/2 top-[calc(50%+100px)] -translate-x-1/2 -translate-y-1/2 rounded-3xl backdrop-blur-xl z-10 flex flex-col justify-start items-stretch text-center">
           <div className="title flex justify-center items-center flex-col bg-green p-3.5 rounded-t-3xl">
             <p className="text-3xl text-bg-dark">產品待辦清單</p>
@@ -75,32 +53,21 @@ const PoStep3 = () =>{
               <span>高</span>
               <span>低</span>
             </div>
-            <ul className="move-in w-full">
-              <li className="w-412 h-100 rounded-3xl border-dashed border-green border-2"></li>
-              <li className="w-412 h-100 rounded-3xl border-dashed border-green border-2 mt-4"></li>
-              <li className="w-412 h-100 rounded-3xl border-dashed border-green border-2 mt-4"></li>
-              <li className="w-412 h-100 rounded-3xl border-dashed border-green border-2 mt-4"></li>
+            <ul className="move-in w-full text-left">
+              <ListBox/>
+              <ListBox hasMates={true}/>
+              <ListBox hasMates={true}/>
+              <ListBox hasMates={true}/>
             </ul>
           </div>
         </div>
         <div className="list-box w-500 h-596 bg-green/20 absolute left-[calc(50%+12px)] top-[calc(50%+112px)] -translate-x-1/2 -translate-y-1/2 rounded-3xl"></div>
         <div className="list-box w-500 h-596 bg-green/10 absolute left-[calc(50%+22px)] top-[calc(50%+124px)] -translate-x-1/2 -translate-y-1/2 rounded-3xl"></div>
         {/* tag  */}
-        <div className="tag-btn absolute top-[58%] left-[20%] z-20 -translate-x-1/2 -translate-y-1/2 opacity-30">應徵者的線上履歷編輯器</div>
-        <div className="tag-btn absolute top-[59%] right-[15%] z-20 translate-x-1/2 -translate-y-1/2 opacity-30">會員系統（登入、註冊、權限管理）</div>
-        <div className="tag-btn absolute top-[72%] left-[15%] z-20 -translate-x-1/2 -translate-y-1/2 opacity-30">後台職缺管理功能（資訊上架、<br/>下架、顯示應徵者資料）</div>
-        <div className="tag-btn absolute top-[73%] right-[21%] z-20 translate-x-1/2 -translate-y-1/2 opacity-30 animate-listOpacity">前台職缺列表、應徵</div>
-        {/* animate */}
-        <div className="list-arrow absolute z-20 right-[28%] bottom-[30%] opacity-0 animate-listOpacity2">
-          <img src={arrow} alt="arrow" />
-        </div>
-        <div className="list-outside absolute w-412 h-100 top-[calc(50%-32px)] left-[calc(50%+16px)] -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 animate-listOpacity2">
-          <div className="lsit-content h-full">前台職缺列表、應徵</div>
-          <div className="move-point absolute bottom-[calc(0%+10px)] translate-y-1/2 right-[10%]">
-            <img src={point} alt="point" />
-          </div>
-        </div>
-      </div>
+        { ListContent.map(list=>(
+          <ListItem key={list.id} name={list.text} className={list.className} id={list.id}/>
+        )) }
+      </DndProvider>
     </div>
   )
 }

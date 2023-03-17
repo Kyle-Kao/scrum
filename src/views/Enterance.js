@@ -1,6 +1,8 @@
-import { useState } from 'react'
-import Reading from '../components/Reading'
-import Loading from '../components/Loading'
+import { useState, lazy } from 'react'
+// import Reading from '../components/Reading'
+// import Loading from '../components/Loading'
+const Reading = lazy(() => import('../components/Reading'))
+const Loading = lazy(() => import('../components/Loading'))
 
 const Index = () =>{
   const [isLoading, setIsLoading] = useState(true)

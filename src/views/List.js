@@ -1,8 +1,12 @@
 import { useParams } from 'react-router-dom'
-import PoStep1 from '../components/po/PoStep1'
-import PoStep2 from '../components/po/PoStep2'
-import PoStep3 from '../components/po/PoStep3'
-// import { useState } from 'react'
+
+// eslint-disable-next-line no-unused-vars
+import { useState, lazy, Suspense } from 'react'
+
+const PoStep1 = lazy(() => import('../components/po/PoStep1'))
+const PoStep2 = lazy(() => import('../components/po/PoStep2'))
+const PoStep3 = lazy(() => import('../components/po/PoStep3'))
+const PoStep4 = lazy(() => import('../components/po/PoStep4'))
 
 const List = () => {
   const { step } = useParams()
@@ -13,6 +17,8 @@ const List = () => {
         return <PoStep2 />
       case "3":
         return <PoStep3 />
+      case "4":
+        return <PoStep4 />
       default:
         return <PoStep1 />
     }
@@ -20,7 +26,9 @@ const List = () => {
 
   return (
     <div className="bg-bg-dark w-full h-screen">
-      { renderSwitch(step) }
+      <Suspense fallback={<div>Loading...</div>}>
+        { renderSwitch(step) }
+      </Suspense>
     </div>
   )
 }
