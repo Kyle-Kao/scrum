@@ -1,22 +1,22 @@
 import { useDrag } from 'react-dnd'
 import { ItemTypes } from "../dnd/ItemTypes"
 
-export const ListItem = ({ className, name, id }) => {
+export const ListItem = ({ className, name, id, myProps }) => {
   const [ { opacity }, drag] = useDrag(
     () => ({
       type: ItemTypes.BOX,
-      item: { name, id },
+      item: { name, id, type: ItemTypes.BOX },
       end(item, monitor) {
         const dropResult = monitor.getDropResult()
         if (item && dropResult) {
-          console.log('drag:: ', item)
+          console.log('dropResult.name:: ', dropResult)
         }
       },
       collect: (monitor) => ({
         opacity: monitor.isDragging() ? 0.3 : 1,
       }),
     }),
-    [name, className],
+    [name, className, id],
   )
   return (
     <div ref={drag} style={{opacity}} className={className}>
