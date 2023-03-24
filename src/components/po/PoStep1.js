@@ -1,9 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
-import bg from '../../images/bg_village.png'
-import po from '../../images/role_po.png'
-import hole from '../../images/hole.svg'
-import poLight from '../../images/role_po_light.png'
-import continuePo from '../../images/ic_continue_po.gif'
+import { po, bg, hole, poLight, continuePo } from '../../doc/imageSource'
 import { useState, useEffect } from 'react'
 
 const PoStep1 = () => {

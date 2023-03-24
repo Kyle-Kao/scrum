@@ -1,12 +1,4 @@
-import bg from "../../images/bg_village.png"
-import po from '../../images/role_po.png'
-import hole from '../../images/hole.svg'
-import poLight from '../../images/role_po_light.png'
-import continuePo from '../../images/ic_continue_po.gif'
-import jira from "../../images/logo_jira_w.svg"
-import point from "../../images/hand-finger.png"
-import arrow from "../../images/Vector 1.png"
-
+import { po, bg, hole, poLight, continuePo, jira, point, arrow } from '../../doc/imageSource'
 import { useEffect, useState } from "react"
 import { useNavigate } from 'react-router-dom'
 

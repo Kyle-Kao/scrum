@@ -9,7 +9,6 @@ export const ListItem = ({ className, name, id, myProps }) => {
       end(item, monitor) {
         const dropResult = monitor.getDropResult()
         if (item && dropResult) {
-          console.log('dropResult.name:: ', dropResult)
         }
       },
       collect: (monitor) => ({

@@ -1,71 +1,23 @@
-import bg from "../../images/bg_village.png"
-import po from '../../images/role_po.png'
-import hole from '../../images/hole.svg'
-import poLight from '../../images/role_po_light.png'
-import continuePo from '../../images/ic_continue_po.gif'
-import jira from "../../images/logo_jira_w.svg"
-import { ListContent } from '../../documents/Content'
+import { po, bg, hole, poLight, continuePo, jira } from '../../doc/imageSource'
+import { ListContent } from '../../doc/Content'
 import { ListItem } from "../dnd/Drag"
 import { ListBox } from "../dnd/Drop"  
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
-
-// import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
-// import { ListBox } from "../dnd2/Drop"
-// import { ListItem } from "../dnd2/Drap"
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import { useState, useRef } from "react"
 
-const DropSourceWrap = styled.div`
-    position: relative;
-  `
-  const DragItems = styled.div`
-    position: relative;
-  `
 
 const PoStep4 = () =>{
-//   const initialTodoList = JSON.parse(JSON.stringify(ListContent));
-//   const initialDragList = JSON.parse(JSON.stringify(ListContent)).map((item) => {
-//     return { ...item, dragId: item.id, isDrag: false };
-// });
-//   const [dragList, setDragList] = useState(initialDragList);
-//   const initialTodoListRef = useRef(initialTodoList);
-
-//   const dragEndHandler = (e) => {
-//     const { source, destination } = e;
-//     if (!destination || destination.droppableId !== "drop-teachTodoList")
-//         return;
-//     const newDragList = [...dragList];
-//     const newInitialDragList = [...ListContent];
-//     if (source.droppableId === "drop-teachTodoList") {
-//         // dragList 內部拖拉
-//         const [dragItem] = newDragList.splice(source.index, 1);
-//         newDragList.splice(destination.index, 0, dragItem);
-//         setDragList(newDragList);
-//     } else {
-//         // 從外面拖拉到 dragList
-//         //移除外面 dragItem
-//         initialTodoListRef.current[source.index].isDrag = false;
-//         //裡面的 dragItem 顯示
-//         const [dragItem] = newInitialDragList.splice(source.index, 1);
-//         dragItem.isDrag = true;
-//         const filterDragList = newDragList.filter(
-//             (item) => item.id !== dragItem.id
-//         );
-//         filterDragList.splice(destination.index, 0, dragItem);
-//         setDragList(filterDragList);
-//     }
-// };
   const [ newListArr, setNewListArr ] = useState(ListContent)
+  const [ dropList, setDropList ] = useState([])
   const createProps = {
     newListArr: newListArr,
-    setNewListArr: setNewListArr
+    setNewListArr: setNewListArr,
+    dropList: dropList,
+    setDropList: setDropList
   }
-
-  // test
-  const initialTodoListRef = useRef(ListContent)
-  console.log('initialTodoListRef:: ', initialTodoListRef)
   
   return (
     <div className={`relative m-0auto h-full desktop:max-w-screen-desktop`}>
@@ -100,82 +52,43 @@ const PoStep4 = () =>{
             <p className="text-3xl text-bg-dark">產品待辦清單</p>
             <p className="text-dark-green text-base">Product Backlog</p>
           </div>
-          <div className="example w-full h-full rounded-b-3xl flex justify-start items-stretch text-center p-7">
+          <div className="example w-full h-full rounded-b-3xl flex justify-start items-stretch text-center p-7 pt-3">
             <div className="relative level text-white flex flex-col justify-between items-center mr-4 beforeLine">
               <span>高</span>
               <span>低</span>
             </div>
             <ul className="move-in w-full text-left">
-              <ListBox myProps={createProps}/>
-              <ListBox myProps={createProps} hasMates={true}/>
-              <ListBox myProps={createProps} hasMates={true}/>
-              <ListBox myProps={createProps} hasMates={true}/>
+              { dropList.length === 0 ?
+                newListArr.map((item,index)=> (
+                  <ListBox key={index} name='' index={index} myProps={createProps} /> 
+                )) :
+                <>
+                  {dropList.map((list,index) => (
+                    <ListBox 
+                      key={list.id} 
+                      id={list.id} 
+                      name={list.name} 
+                      index={index}
+                      dynamicData={dropList}
+                      myProps={createProps} 
+                    />
+                  )) }
+                  {/* {
+                    newListArr.map((item,index)=> (
+                      <ListBox key={index} name='' index={index} myProps={createProps} /> 
+                    ))
+                  } */}
+                </>
+              }
             </ul>
           </div>
         </div>
         <div className="list-box w-500 h-596 bg-green/20 absolute left-[calc(50%+12px)] top-[calc(50%+112px)] -translate-x-1/2 -translate-y-1/2 rounded-3xl"></div>
         <div className="list-box w-500 h-596 bg-green/10 absolute left-[calc(50%+22px)] top-[calc(50%+124px)] -translate-x-1/2 -translate-y-1/2 rounded-3xl"></div>
-        { ListContent.map(list=>(
+        { newListArr.map(list=>(
           <ListItem key={list.id} name={list.text} className={list.className} id={list.id} myProps={createProps}/>
         )) }
       </DndProvider>
-
-      {/* <DragDropContext className="outside-box opacity-0 animate-fadeOpacity">
-        <div className="list-box w-500 h-596 bg-green/30 absolute left-1/2 top-[calc(50%+100px)] -translate-x-1/2 -translate-y-1/2 rounded-3xl backdrop-blur-xl z-10 flex flex-col justify-start items-stretch text-center">
-          <div className="title flex justify-center items-center flex-col bg-green p-3.5 rounded-t-3xl">
-            <p className="text-3xl text-bg-dark">產品待辦清單</p>
-            <p className="text-dark-green text-base">Product Backlog</p>
-          </div>
-          <div className="example w-full h-full rounded-b-3xl flex justify-start items-stretch text-center p-7">
-            <div className="relative level text-white flex flex-col justify-between items-center mr-4 beforeLine">
-              <span>高</span>
-              <span>低</span>
-            </div>
-            <Droppable droppableId="drop-test">
-              {(provided, snapshot) => {
-                <DropSourceWrap 
-                  {...provided.droppableProps} 
-                  innerRef={provided.innerRef}
-                >
-                  {initialTodoListRef.current.map((item,index) => (
-                    <Draggable draggableId={item.id} key={item.id} index={index}>
-                      {(provided, snapshot) => {
-                        <DragItems
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
-                          innerRef={provided.innerRef}
-                        >
-                          {item.text}
-                        </DragItems>
-                      }}
-                    </Draggable>
-                  ))}
-                </DropSourceWrap>
-              }}
-            </Droppable>
-            <ul className="move-in w-full text-left">
-              <ListBox/>
-              <ListBox hasMates={true}/>
-              <ListBox hasMates={true}/>
-              <ListBox hasMates={true}/>
-            </ul>
-          </div>
-        </div>
-        <div className="list-box w-500 h-596 bg-green/20 absolute left-[calc(50%+12px)] top-[calc(50%+112px)] -translate-x-1/2 -translate-y-1/2 rounded-3xl"></div>
-        <div className="list-box w-500 h-596 bg-green/10 absolute left-[calc(50%+22px)] top-[calc(50%+124px)] -translate-x-1/2 -translate-y-1/2 rounded-3xl"></div>
-        { 
-          <Droppable droppableId="drop-tag">
-            {(provided, snapshot)=>{
-              <div
-                {...provided.droppableProps}
-                ref={provided.innerRef}
-              >
-                <ListItem/>
-              </div>
-            }}
-          </Droppable>
-        }
-      </DragDropContext> */}
     </div>
   )
 }

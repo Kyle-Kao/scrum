@@ -1,14 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import leafL from '../images/bg_leafDark_1.png'
-import leafR from '../images/bg_leafDark_3.png'
-import leafB from '../images/bg_leafDark_2.png'
-import leafT from '../images/bg_leafDark_4.png'
-import leafTintL from '../images/bg_leafTint_1.png'
-import leafTintB from '../images/bg_leafTint_2.png'
-import leafTintT from '../images/bg_leafTint_3.png'
-import leafTintR from '../images/bg_leafTint_4.png'
-import logo from '../images/logo_hole.png'
+import { leafL, leafR, leafB, leafT, leafTintL, leafTintB, leafTintT, leafTintR, logo } from '../doc/imageSource'
 
 const Reading = () =>{
   const [intoVillage, setIntoVillage] = useState(false)
