@@ -1,7 +1,14 @@
 {
   "files": {
-    "main.css": "/scrum/static/css/main.e40ad1f2.css",
-    "main.js": "/scrum/static/js/main.cb77e949.js",
+    "main.css": "/scrum/static/css/main.3622607b.css",
+    "main.js": "/scrum/static/js/main.dc51710e.js",
+    "static/js/54.62f2f6d7.chunk.js": "/scrum/static/js/54.62f2f6d7.chunk.js",
+    "static/js/937.e6478081.chunk.js": "/scrum/static/js/937.e6478081.chunk.js",
+    "static/js/730.3d3602e1.chunk.js": "/scrum/static/js/730.3d3602e1.chunk.js",
+    "static/js/998.93fdbeae.chunk.js": "/scrum/static/js/998.93fdbeae.chunk.js",
+    "static/js/70.d293e48f.chunk.js": "/scrum/static/js/70.d293e48f.chunk.js",
+    "static/js/814.b5e8dde5.chunk.js": "/scrum/static/js/814.b5e8dde5.chunk.js",
+    "static/js/231.5a11564f.chunk.js": "/scrum/static/js/231.5a11564f.chunk.js",
     "static/media/logo_hole.png": "/scrum/static/media/logo_hole.d3ff59fc3b5413f82b4e.png",
     "static/media/bg_village.png": "/scrum/static/media/bg_village.680f13032bd0e90cac09.png",
     "static/media/bg_leafDark_3.png": "/scrum/static/media/bg_leafDark_3.5b68d750b3ebb253e06e.png",
@@ -15,14 +22,21 @@
     "static/media/bg_leafTint_1.png": "/scrum/static/media/bg_leafTint_1.26461a94ffe84716ced5.png",
     "static/media/role_po.png": "/scrum/static/media/role_po.5acc3b93dea8b03f0add.png",
     "static/media/bg_leafTint_3.png": "/scrum/static/media/bg_leafTint_3.118168328f8ccd33e0a5.png",
-    "static/media/logo_jira_w.svg": "/scrum/static/media/logo_jira_w.698d1ff910ada8351e67289b310de962.svg",
+    "static/media/logo_jira_w.svg": "/scrum/static/media/logo_jira_w.301b54886c917df4cc9a79a773a9b85e.svg",
     "index.html": "/scrum/index.html",
-    "static/media/hole.svg": "/scrum/static/media/hole.d213cb622608de788995c48ee9c083ad.svg",
-    "main.e40ad1f2.css.map": "/scrum/static/css/main.e40ad1f2.css.map",
-    "main.cb77e949.js.map": "/scrum/static/js/main.cb77e949.js.map"
+    "static/media/hole.svg": "/scrum/static/media/hole.1f140075f048b0982f80a44ce80d76dc.svg",
+    "main.3622607b.css.map": "/scrum/static/css/main.3622607b.css.map",
+    "main.dc51710e.js.map": "/scrum/static/js/main.dc51710e.js.map",
+    "54.62f2f6d7.chunk.js.map": "/scrum/static/js/54.62f2f6d7.chunk.js.map",
+    "937.e6478081.chunk.js.map": "/scrum/static/js/937.e6478081.chunk.js.map",
+    "730.3d3602e1.chunk.js.map": "/scrum/static/js/730.3d3602e1.chunk.js.map",
+    "998.93fdbeae.chunk.js.map": "/scrum/static/js/998.93fdbeae.chunk.js.map",
+    "70.d293e48f.chunk.js.map": "/scrum/static/js/70.d293e48f.chunk.js.map",
+    "814.b5e8dde5.chunk.js.map": "/scrum/static/js/814.b5e8dde5.chunk.js.map",
+    "231.5a11564f.chunk.js.map": "/scrum/static/js/231.5a11564f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e40ad1f2.css",
-    "static/js/main.cb77e949.js"
+    "static/css/main.3622607b.css",
+    "static/js/main.dc51710e.js"
   ]
 }
